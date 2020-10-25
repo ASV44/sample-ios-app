@@ -1,12 +1,12 @@
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    @IBAction func openCollectionViewScreen() {
+    @IBAction private func openCollectionViewScreen() {
         let collectionVC = instantiateViewController(
             storyboardName: "CollectionViewExample",
             identifier: CollectionViewController.identifier,
@@ -16,6 +16,18 @@ class ViewController: UIViewController {
         navigationController?.pushViewController(collectionVC, animated: true)
     }
 
+    @IBAction private func openChatScreen() {
+        let chatVC = instantiateViewController(
+            storyboardName: "ChatViewController",
+            identifier: ChatViewController.identifier,
+            type: ChatViewController.self
+        )
+        let interactor = ChatInteractor(view: chatVC)
+        chatVC.interactor = interactor
+
+        navigationController?.pushViewController(chatVC, animated: true)
+    }
+    
     private func instantiateViewController<T: UIViewController>(storyboardName: String,
                                                                 identifier: String,
                                                                 type: T.Type) -> T {
