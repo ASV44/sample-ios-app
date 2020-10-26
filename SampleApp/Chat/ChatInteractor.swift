@@ -18,10 +18,10 @@ final class ChatInteractor: ChatViewOutput {
         request.timeoutInterval = 5
         socket = WebSocket(request: request)
         socket.connect()
-        socket.onEvent = { [weak self] event in self?.handle(event: event) }
+        socket.onEvent = { [weak self] event in self?.handleRegistration(event: event) }
     }
     
-    private func handle(event: WebSocketEvent) {
+    private func handleRegistration(event: WebSocketEvent) {
         switch event {
         case .connected(let headers):
             isConnected = true
@@ -31,21 +31,43 @@ final class ChatInteractor: ChatViewOutput {
             print("websocket is disconnected: \(reason) with code: \(code)")
         case .text(let string):
             print("Received text: \(string)")
-        case .binary(let data):
-            print("Received data: \(data.count)")
-        case .ping(_):
-            break
-        case .pong(_):
-            break
-        case .viabilityChanged(_):
-            break
-        case .reconnectSuggested(_):
-            break
+            guard let data = string.data(using: .utf8),
+                  let registration = try? JSONDecoder().decode(Registration.self, from: data) else { return }
+            view?.showRegistrationMessage(registration: registration)
         case .cancelled:
             isConnected = false
         case .error(let error):
             isConnected = false
             handleError(error)
+        default:
+            break
+        }
+    }
+    
+    func sendUserRegistration(registration: Registration, nickName: String) {
+        let user = User(ID: registration.userID, nickName: "ASV44")
+        guard let userData = try? JSONEncoder().encode(user) else { return }
+        socket.write(data: userData)
+        socket.onEvent = { [weak self] event in self?.handleMessages(event: event) }
+    }
+    
+    private func handleMessages(event: WebSocketEvent) {
+        switch event {
+        case .connected(let headers):
+            isConnected = true
+            print("websocket is connected: \(headers)")
+        case .disconnected(let reason, let code):
+            isConnected = false
+            print("websocket is disconnected: \(reason) with code: \(code)")
+        case .text(let string):
+            print("Received text: \(string)")
+        case .cancelled:
+            isConnected = false
+        case .error(let error):
+            isConnected = false
+            handleError(error)
+        default:
+            break
         }
     }
     

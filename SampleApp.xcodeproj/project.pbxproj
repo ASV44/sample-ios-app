@@ -24,6 +24,10 @@
 		D62CC9AD2545FA700025FB98 /* ChatInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62CC9AC2545FA700025FB98 /* ChatInteractor.swift */; };
 		D62CC9B22545FA7A0025FB98 /* ChatViewIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62CC9B12545FA7A0025FB98 /* ChatViewIO.swift */; };
 		D630B726FD350C0ABC6945B1 /* Pods_SampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 487DA35C3DCABE82F6EAC7FC /* Pods_SampleApp.framework */; };
+		D687EA11254621B4002524CC /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D687EA10254621B4002524CC /* Registration.swift */; };
+		D687EA162546236D002524CC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D687EA152546236D002524CC /* User.swift */; };
+		D687EA1B25464CB0002524CC /* IncomingMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D687EA1A25464CB0002524CC /* IncomingMessage.swift */; };
+		D687EA2025464CBF002524CC /* OutgoingMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D687EA1F25464CBF002524CC /* OutgoingMessage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +76,10 @@
 		D62CC9A12545F8040025FB98 /* ChatViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatViewController.storyboard; sourceTree = "<group>"; };
 		D62CC9AC2545FA700025FB98 /* ChatInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInteractor.swift; sourceTree = "<group>"; };
 		D62CC9B12545FA7A0025FB98 /* ChatViewIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewIO.swift; sourceTree = "<group>"; };
+		D687EA10254621B4002524CC /* Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
+		D687EA152546236D002524CC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D687EA1A25464CB0002524CC /* IncomingMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingMessage.swift; sourceTree = "<group>"; };
+		D687EA1F25464CBF002524CC /* OutgoingMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutgoingMessage.swift; sourceTree = "<group>"; };
 		FD0F4959914642AF07283B4A /* Pods_SampleApp_SampleAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleApp_SampleAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -202,12 +210,24 @@
 		D62CC99B2545F7BD0025FB98 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				D687EA0F254621A5002524CC /* Models */,
 				D62CC99C2545F7EC0025FB98 /* ChatViewController.swift */,
 				D62CC9A12545F8040025FB98 /* ChatViewController.storyboard */,
 				D62CC9AC2545FA700025FB98 /* ChatInteractor.swift */,
 				D62CC9B12545FA7A0025FB98 /* ChatViewIO.swift */,
 			);
 			path = Chat;
+			sourceTree = "<group>";
+		};
+		D687EA0F254621A5002524CC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D687EA10254621B4002524CC /* Registration.swift */,
+				D687EA152546236D002524CC /* User.swift */,
+				D687EA1A25464CB0002524CC /* IncomingMessage.swift */,
+				D687EA1F25464CBF002524CC /* OutgoingMessage.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -451,10 +471,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D687EA11254621B4002524CC /* Registration.swift in Sources */,
+				D687EA1B25464CB0002524CC /* IncomingMessage.swift in Sources */,
 				D62CC9AD2545FA700025FB98 /* ChatInteractor.swift in Sources */,
 				3DD141BF2400312B00154B8B /* CollectionViewController.swift in Sources */,
+				D687EA2025464CBF002524CC /* OutgoingMessage.swift in Sources */,
 				3D5418E923E2BE2E00A09252 /* ViewController.swift in Sources */,
 				3D5418E523E2BE2E00A09252 /* AppDelegate.swift in Sources */,
+				D687EA162546236D002524CC /* User.swift in Sources */,
 				D62CC9B22545FA7A0025FB98 /* ChatViewIO.swift in Sources */,
 				D62CC99D2545F7EC0025FB98 /* ChatViewController.swift in Sources */,
 				3D5418E723E2BE2E00A09252 /* SceneDelegate.swift in Sources */,
