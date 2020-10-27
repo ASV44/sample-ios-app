@@ -5,5 +5,5 @@ protocol ChatViewInput: class {
 
 protocol ChatViewOutput {
     func viewDidLoad()
-    func sendUserRegistration(registration: Registration, nickName: String)
+    func sendMessage(text: String)
 }

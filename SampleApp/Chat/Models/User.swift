@@ -1,4 +1,9 @@
 struct User: Codable {
     let ID: Int
-    let nickName: String
+    var nickName: String
+    
+    init(ID: Int, nickName: String = "") {
+        self.ID = ID
+        self.nickName = nickName
+    }
 }
