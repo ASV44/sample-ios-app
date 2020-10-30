@@ -23,6 +23,8 @@ final class ChatViewController: UIViewController, ChatViewInput {
     
     private func setupView() {
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
+        inputTextField.layer.borderWidth = 1
+        inputTextField.layer.borderColor = UIColor.black.cgColor
     }
     
     func showRegistrationMessage(registration: Registration) {

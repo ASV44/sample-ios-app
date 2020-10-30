@@ -1,7 +1,10 @@
 import Foundation
 
 struct Registration: Codable {
-    let userID: Int
     let text: String
     let time: String
+}
+
+struct AccountData: Codable {
+    let nickName: String
 }

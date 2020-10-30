@@ -3,12 +3,18 @@ import Starscream
 final class ChatInteractor: ChatViewOutput {
     private weak var view: ChatViewInput?
     private var socket: WebSocket!
+    private let decoder: JSONDecoder = JSONDecoder()
+    private let encoder: JSONEncoder = JSONEncoder()
     private var isConnected = false
     private var user: User!
     private var inputTextProcessor: ((String) -> Void)!
+    private var messageHandler: ((Data) -> Void)!
     
     init(view: ChatViewInput) {
         self.view = view
+
+        inputTextProcessor = registerUser
+        messageHandler = handleRegistration
     }
     
     func viewDidLoad() {
@@ -16,7 +22,7 @@ final class ChatInteractor: ChatViewOutput {
     }
     
     private func establishWebsocketConnection() {
-        inputTextProcessor = sendUserRegistration
+        inputTextProcessor = registerUser
         var request = URLRequest(url: URL(string: "http://localhost:8080/websocket-connect")!)
         request.timeoutInterval = 5
         socket = WebSocket(request: request)
@@ -34,10 +40,8 @@ final class ChatInteractor: ChatViewOutput {
             print("websocket is disconnected: \(reason) with code: \(code)")
         case .text(let string):
             print("Received text: \(string)")
-            guard let data = string.data(using: .utf8),
-                  let registration = try? JSONDecoder().decode(Registration.self, from: data) else { return }
-            user = User(ID: registration.userID)
-            view?.showRegistrationMessage(registration: registration)
+            guard let data = string.data(using: .utf8) else { return }
+            messageHandler(data)
         case .cancelled:
             isConnected = false
         case .error(let error):
@@ -48,40 +52,32 @@ final class ChatInteractor: ChatViewOutput {
         }
     }
     
-    private func sendUserRegistration(nickName: String) {
-        user.nickName = nickName
-        guard let userData = try? JSONEncoder().encode(user) else { return }
-        socket.write(data: userData)
+    private func handleRegistration(data: Data) {
+        guard let registration = try? decoder.decode(Registration.self, from: data) else { return }
+        view?.showRegistrationMessage(registration: registration)
+    }
+    
+    private func handleUser(data: Data) {
+        guard let user = try? decoder.decode(User.self, from: data) else { return }
+        self.user = user
         inputTextProcessor = sendChatMessage
-        socket.onEvent = { [weak self] event in self?.handleMessages(event: event) }
+        messageHandler = handleIncomingMessage
     }
     
-    private func handleMessages(event: WebSocketEvent) {
-        switch event {
-        case .connected(let headers):
-            isConnected = true
-            print("websocket is connected: \(headers)")
-        case .disconnected(let reason, let code):
-            isConnected = false
-            print("websocket is disconnected: \(reason) with code: \(code)")
-        case .text(let string):
-            print("Received text: \(string)")
-            guard let data = string.data(using: .utf8),
-                  let message = try? JSONDecoder().decode(IncomingMessage.self, from: data) else { return }
-            view?.showMessage(message: message)
-        case .cancelled:
-            isConnected = false
-        case .error(let error):
-            isConnected = false
-            handleError(error)
-        default:
-            break
-        }
+    private func handleIncomingMessage(data: Data) {
+        guard let message = try? decoder.decode(IncomingMessage.self, from: data) else { return }
+        view?.showMessage(message: message)
+    }
+    
+    private func registerUser(nickName: String) {
+        guard let accountData = try? encoder.encode(AccountData(nickName: nickName)) else { return }
+        socket.write(data: accountData)
+        messageHandler = handleUser
     }
     
     private func sendChatMessage(text: String) {
-        let outgoingMessage = OutgoingMessage(type: "channel", target: "random", sender: user, text: text, time: currentDateTime)
-        guard let messageData = try? JSONEncoder().encode(outgoingMessage) else { return }
+        let outgoingMessage = OutgoingMessage(type: "channel", target: "random", user: user, text: text, time: currentDateTime)
+        guard let messageData = try? encoder.encode(outgoingMessage) else { return }
         socket.write(data: messageData)
     }
     
