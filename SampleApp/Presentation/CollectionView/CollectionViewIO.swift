@@ -1,7 +1,11 @@
-protocol CollectionViewInput: class {
-    
+import UIKit
+
+protocol CollectionViewInput: ErrorPresentable {
+    func reloadData()
 }
 
-protocol CollectionViewOutput {
+protocol CollectionViewOutput: ExceptionHandler {
     func viewDidLoad()
+    var launchesCount: Int { get }
+    func cellModel(at indexPath: IndexPath) -> LaunchCellModel?
 }

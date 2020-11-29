@@ -38,6 +38,12 @@
 		D687EA162546236D002524CC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D687EA152546236D002524CC /* User.swift */; };
 		D687EA1B25464CB0002524CC /* IncomingMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D687EA1A25464CB0002524CC /* IncomingMessage.swift */; };
 		D687EA2025464CBF002524CC /* OutgoingMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D687EA1F25464CBF002524CC /* OutgoingMessage.swift */; };
+		D656CB5C25743644000802CD /* LaunchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656CB5B25743644000802CD /* LaunchCell.swift */; };
+		D656CB6125743656000802CD /* LaunchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D656CB6025743656000802CD /* LaunchCell.xib */; };
+		D6DF553025743EB300D0AFCB /* LaunchCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DF552F25743EB300D0AFCB /* LaunchCellModel.swift */; };
+		D6DF5536257446C700D0AFCB /* ErrorPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DF5535257446C700D0AFCB /* ErrorPresentable.swift */; };
+		D6DF553E2574486B00D0AFCB /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DF553D2574486B00D0AFCB /* ErrorHandler.swift */; };
+		D6DF55442574507700D0AFCB /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DF55432574507700D0AFCB /* Collection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +106,12 @@
 		D687EA152546236D002524CC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D687EA1A25464CB0002524CC /* IncomingMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingMessage.swift; sourceTree = "<group>"; };
 		D687EA1F25464CBF002524CC /* OutgoingMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutgoingMessage.swift; sourceTree = "<group>"; };
+		D656CB5B25743644000802CD /* LaunchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCell.swift; sourceTree = "<group>"; };
+		D656CB6025743656000802CD /* LaunchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchCell.xib; sourceTree = "<group>"; };
+		D6DF552F25743EB300D0AFCB /* LaunchCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCellModel.swift; sourceTree = "<group>"; };
+		D6DF5535257446C700D0AFCB /* ErrorPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorPresentable.swift; sourceTree = "<group>"; };
+		D6DF553D2574486B00D0AFCB /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
+		D6DF55432574507700D0AFCB /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		DCEE4E50A8663479E2E31A91 /* Pods_SampleAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -201,6 +213,7 @@
 		3DD141C12400315900154B8B /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				D656CB5A2574362D000802CD /* LaunchCell */,
 				3DD141BC240030E800154B8B /* CollectionViewExample.storyboard */,
 				3DD141BE2400312B00154B8B /* CollectionViewController.swift */,
 				D656CA0C25741177000802CD /* CollectionInteractor.swift */,
@@ -248,6 +261,8 @@
 		D656C9E925740379000802CD /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				D6DF55342574466F00D0AFCB /* Protocols */,
+				D6DF55422574506100D0AFCB /* Extensions */,
 				3DD141C02400313100154B8B /* MainScreen */,
 				3DD141C12400315900154B8B /* CollectionView */,
 			);
@@ -316,6 +331,33 @@
 				D687EA1F25464CBF002524CC /* OutgoingMessage.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		D656CB5A2574362D000802CD /* LaunchCell */ = {
+			isa = PBXGroup;
+			children = (
+				D656CB5B25743644000802CD /* LaunchCell.swift */,
+				D656CB6025743656000802CD /* LaunchCell.xib */,
+				D6DF552F25743EB300D0AFCB /* LaunchCellModel.swift */,
+			);
+			path = LaunchCell;
+			sourceTree = "<group>";
+		};
+		D6DF55342574466F00D0AFCB /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D6DF5535257446C700D0AFCB /* ErrorPresentable.swift */,
+				D6DF553D2574486B00D0AFCB /* ErrorHandler.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D6DF55422574506100D0AFCB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D6DF55432574507700D0AFCB /* Collection.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -431,6 +473,7 @@
 				D62CC9A22545F8040025FB98 /* ChatViewController.storyboard in Resources */,
 				3D5418F123E2BE3000A09252 /* LaunchScreen.storyboard in Resources */,
 				3DD141BD240030E800154B8B /* CollectionViewExample.storyboard in Resources */,
+				D656CB6125743656000802CD /* LaunchCell.xib in Resources */,
 				3D5418EE23E2BE3000A09252 /* Assets.xcassets in Resources */,
 				3D5418EC23E2BE2E00A09252 /* Main.storyboard in Resources */,
 			);
@@ -582,12 +625,17 @@
 				D62CC9AD2545FA700025FB98 /* ChatInteractor.swift in Sources */,
 				3DD141BF2400312B00154B8B /* CollectionViewController.swift in Sources */,
 				D687EA2025464CBF002524CC /* OutgoingMessage.swift in Sources */,
+				D6DF553025743EB300D0AFCB /* LaunchCellModel.swift in Sources */,
+				3DD141BF2400312B00154B8B /* CollectionViewController.swift in Sources */,
+				D6DF55442574507700D0AFCB /* Collection.swift in Sources */,
 				D656CA1225741183000802CD /* CollectionViewIO.swift in Sources */,
 				D656C9F5257403ED000802CD /* APICommunication.swift in Sources */,
 				D656CA0825740FE8000802CD /* URL.swift in Sources */,
+				D6DF553E2574486B00D0AFCB /* ErrorHandler.swift in Sources */,
 				D656CA19257413AB000802CD /* Observable.swift in Sources */,
 				D656CA00257407C0000802CD /* Launch.swift in Sources */,
 				D656CA0D25741177000802CD /* CollectionInteractor.swift in Sources */,
+				D6DF5536257446C700D0AFCB /* ErrorPresentable.swift in Sources */,
 				D656C9ED257403D7000802CD /* APIService.swift in Sources */,
 				3D5418E923E2BE2E00A09252 /* ViewController.swift in Sources */,
 				D656C9FA2574075E000802CD /* NetworkException.swift in Sources */,
@@ -597,6 +645,7 @@
 				D62CC99D2545F7EC0025FB98 /* ChatViewController.swift in Sources */,
 				D662CCE225478B20009B6E6A /* KeyboardInfo.swift in Sources */,
 				D662CCDC25478AF8009B6E6A /* Keyboard.swift in Sources */,
+				D656CB5C25743644000802CD /* LaunchCell.swift in Sources */,
 				3D5418E723E2BE2E00A09252 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

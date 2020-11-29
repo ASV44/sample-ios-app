@@ -1,7 +1,9 @@
 import RxSwift
 
-final class CollectionInteractor: CollectionViewOutput {
+final class CollectionInteractor {
     private let apiService: APIService
+    private var launches = [Launch]()
+    private var cellModels = [LaunchCellModel]()
     private let disposeBag = DisposeBag()
     
     private weak var view: CollectionViewInput?
@@ -11,17 +13,32 @@ final class CollectionInteractor: CollectionViewOutput {
         self.apiService = apiService
     }
     
+    private func fetchPastLaunches() {
+        apiService.getLatestLaunches()
+            .onSuccess { [weak self] launches in
+                self?.handleLaunchesData(launches: launches)
+            }.onFailure { [weak self] error in
+                self?.handleException(errorPresentable: self?.view, error: error)
+            }.run().disposed(by: disposeBag)
+    }
+    
+    private func handleLaunchesData(launches: [Launch]) {
+        self.launches = launches
+        cellModels = launches.map(LaunchCellModel.init)
+        view?.reloadData()
+    }
+}
+
+extension CollectionInteractor: CollectionViewOutput {
     func viewDidLoad() {
         fetchPastLaunches()
     }
     
-    private func fetchPastLaunches() {
-        apiService.getLatestLaunches()
-            .onSuccess { [weak self] launches in
-                print(launches)
-            }.onFailure { [weak self] error in
-                print(error)
-//                self?.onError(error: error)
-            }.run().disposed(by: disposeBag)
+    var launchesCount: Int {
+        return launches.count
+    }
+    
+    func cellModel(at indexPath: IndexPath) -> LaunchCellModel? {
+        return cellModels[safe: indexPath.item]
     }
 }
