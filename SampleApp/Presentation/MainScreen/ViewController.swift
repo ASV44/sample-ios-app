@@ -12,6 +12,8 @@ final class ViewController: UIViewController {
             identifier: CollectionViewController.identifier,
             type: CollectionViewController.self
         )
+        let collectionInteractor = CollectionInteractor(view: collectionVC, apiService: APICommunication())
+        collectionVC.interactor = collectionInteractor
 
         navigationController?.pushViewController(collectionVC, animated: true)
     }

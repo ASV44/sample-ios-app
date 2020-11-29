@@ -7,10 +7,15 @@ target 'SampleApp' do
 
   # Pods for SampleApp
   pod 'Starscream', '~> 4.0.0'
+  pod 'Alamofire', '~> 5.2'
+  pod 'RxSwift', '6.0.0-rc.2'
+  pod 'RxCocoa', '6.0.0-rc.2'
 
   target 'SampleAppTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'RxBlocking', '6.0.0-rc.2'
+    pod 'RxTest', '6.0.0-rc.2'
   end
 
   target 'SampleAppUITests' do

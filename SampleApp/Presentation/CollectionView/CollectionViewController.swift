@@ -1,6 +1,7 @@
 import UIKit
 
-final class CollectionViewController: UIViewController {
+final class CollectionViewController: UIViewController, CollectionViewInput {
+    var interactor: CollectionViewOutput!
 
     static var identifier: String {
         return String(describing: self)
@@ -8,5 +9,7 @@ final class CollectionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        interactor.viewDidLoad()
     }
 }
