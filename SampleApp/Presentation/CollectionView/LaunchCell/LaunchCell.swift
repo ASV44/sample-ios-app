@@ -1,12 +1,14 @@
 import UIKit
+import Kingfisher
 
 final class LaunchCell: UICollectionViewCell {
     static var identifier = "ForecastCell"
 
     @IBOutlet private var imageView: UIImageView!
-    @IBOutlet private var descriptionLabel: UILabel!
+    @IBOutlet private var launchStatus: UILabel!
     @IBOutlet private var missionNameLabel: UILabel!
     @IBOutlet private var missionLaunchDateLabel: UILabel!
+    @IBOutlet private var flightNumberLabel: UILabel!
     
     
     static var nib: UINib {
@@ -18,7 +20,10 @@ final class LaunchCell: UICollectionViewCell {
     }
     
     func configure(with cellModel: LaunchCellModel) {
-        descriptionLabel.text = cellModel.details
+        imageView.kf.setImage(with: cellModel.imageURL, placeholder: UIImage.init(named: "SpaceX-placeholder"))
+        launchStatus.text = cellModel.success ? "Success" : "Fail"
+        launchStatus.textColor = cellModel.success ? .green : .red
+        flightNumberLabel.text = "#\(cellModel.flightNumber)"
         missionNameLabel.text = cellModel.missionName
         missionLaunchDateLabel.text = cellModel.formattedDate
     }

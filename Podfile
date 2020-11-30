@@ -10,6 +10,7 @@ target 'SampleApp' do
   pod 'Alamofire', '~> 5.2'
   pod 'RxSwift', '6.0.0-rc.2'
   pod 'RxCocoa', '6.0.0-rc.2'
+  pod 'Kingfisher', '~> 5.0'
 
   target 'SampleAppTests' do
     inherit! :search_paths

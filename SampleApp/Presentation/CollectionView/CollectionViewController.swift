@@ -2,6 +2,8 @@ import UIKit
 
 final class CollectionViewController: UIViewController {
     @IBOutlet private var collectionView: UICollectionView!
+    @IBOutlet private var loadingIndicator: UIActivityIndicatorView!
+
     var interactor: CollectionViewOutput!
 
     static var identifier: String {
@@ -40,6 +42,14 @@ final class CollectionViewController: UIViewController {
 }
 
 extension CollectionViewController: CollectionViewInput {
+    func showLoadingIndecator() {
+        loadingIndicator.isHidden = false
+    }
+    
+    func hideLoadingIndecator() {
+        loadingIndicator.isHidden = true
+    }
+    
     func reloadData() {
         collectionView.reloadData()
     }

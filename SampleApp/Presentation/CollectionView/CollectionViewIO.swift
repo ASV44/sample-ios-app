@@ -1,6 +1,8 @@
 import UIKit
 
 protocol CollectionViewInput: ErrorPresentable {
+    func showLoadingIndecator()
+    func hideLoadingIndecator()
     func reloadData()
 }
 

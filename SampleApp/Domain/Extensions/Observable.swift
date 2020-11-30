@@ -11,6 +11,14 @@ extension Observable {
         return self.do(onError: block)
     }
     
+    func onSubscribe(_ block: @escaping () -> Void) -> Observable<Element> {
+        return self.do(onSubscribe: block)
+    }
+    
+    func onDispose(_ block: @escaping () -> Void) -> Observable<Element> {
+        return self.do(onDispose: block)
+    }
+    
     func run() -> Disposable {
         return subscribe(on: ConcurrentDispatchQueueScheduler(qos: .utility))
             .observe(on: MainScheduler.instance)

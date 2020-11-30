@@ -15,10 +15,14 @@ final class CollectionInteractor {
     
     private func fetchPastLaunches() {
         apiService.getLatestLaunches()
-            .onSuccess { [weak self] launches in
+            .onSubscribe { [weak self] in
+                self?.view?.showLoadingIndecator()
+            }.onSuccess { [weak self] launches in
                 self?.handleLaunchesData(launches: launches)
             }.onFailure { [weak self] error in
                 self?.handleException(errorPresentable: self?.view, error: error)
+            }.onDispose { [weak self] in
+                self?.view?.hideLoadingIndecator()
             }.run().disposed(by: disposeBag)
     }
     
