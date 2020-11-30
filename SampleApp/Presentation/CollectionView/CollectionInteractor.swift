@@ -45,4 +45,9 @@ extension CollectionInteractor: CollectionViewOutput {
     func cellModel(at indexPath: IndexPath) -> LaunchCellModel? {
         return cellModels[safe: indexPath.item]
     }
+    
+    func didSelectItem(indexPath: IndexPath) {
+        guard let launch = launches[safe: indexPath.item] else { return }
+        view?.presentLaunchDetailsScreen(launch: launch)
+    }
 }

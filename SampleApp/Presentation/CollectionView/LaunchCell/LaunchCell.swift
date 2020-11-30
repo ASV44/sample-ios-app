@@ -20,7 +20,13 @@ final class LaunchCell: UICollectionViewCell {
     }
     
     func configure(with cellModel: LaunchCellModel) {
-        imageView.kf.setImage(with: cellModel.imageURL, placeholder: UIImage.init(named: "SpaceX-placeholder"))
+        imageView.kf.setImage(
+            with: cellModel.imageURL,
+            placeholder: UIImage.init(named: "SpaceX-placeholder"),
+            options: [.processor(DownsamplingImageProcessor(size: imageView.intrinsicContentSize)),
+                      .transition(.fade(0.35)),
+                      .cacheOriginalImage]
+        )
         launchStatus.text = cellModel.success ? "Success" : "Fail"
         launchStatus.textColor = cellModel.success ? .green : .red
         flightNumberLabel.text = "#\(cellModel.flightNumber)"

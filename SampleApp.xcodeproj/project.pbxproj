@@ -45,6 +45,10 @@
 		D687EA2025464CBF002524CC /* OutgoingMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D687EA1F25464CBF002524CC /* OutgoingMessage.swift */; };
 		D656CB5C25743644000802CD /* LaunchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656CB5B25743644000802CD /* LaunchCell.swift */; };
 		D656CB6125743656000802CD /* LaunchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D656CB6025743656000802CD /* LaunchCell.xib */; };
+		D6DF1735257566B90093FB17 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DF1734257566B80093FB17 /* UIViewController.swift */; };
+		D6DF173A257566FD0093FB17 /* LaunchDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DF1739257566FD0093FB17 /* LaunchDetailsViewController.swift */; };
+		D6DF1743257567850093FB17 /* LaunchDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6DF1742257567850093FB17 /* LaunchDetails.storyboard */; };
+		D6DF1748257568510093FB17 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DF1747257568510093FB17 /* Identifiable.swift */; };
 		D6DF553025743EB300D0AFCB /* LaunchCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DF552F25743EB300D0AFCB /* LaunchCellModel.swift */; };
 		D6DF5536257446C700D0AFCB /* ErrorPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DF5535257446C700D0AFCB /* ErrorPresentable.swift */; };
 		D6DF553E2574486B00D0AFCB /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DF553D2574486B00D0AFCB /* ErrorHandler.swift */; };
@@ -116,6 +120,10 @@
 		D687EA1F25464CBF002524CC /* OutgoingMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutgoingMessage.swift; sourceTree = "<group>"; };
 		D656CB5B25743644000802CD /* LaunchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCell.swift; sourceTree = "<group>"; };
 		D656CB6025743656000802CD /* LaunchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchCell.xib; sourceTree = "<group>"; };
+		D6DF1734257566B80093FB17 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		D6DF1739257566FD0093FB17 /* LaunchDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailsViewController.swift; sourceTree = "<group>"; };
+		D6DF1742257567850093FB17 /* LaunchDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchDetails.storyboard; sourceTree = "<group>"; };
+		D6DF1747257568510093FB17 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		D6DF552F25743EB300D0AFCB /* LaunchCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCellModel.swift; sourceTree = "<group>"; };
 		D6DF5535257446C700D0AFCB /* ErrorPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorPresentable.swift; sourceTree = "<group>"; };
 		D6DF553D2574486B00D0AFCB /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
@@ -283,6 +291,7 @@
 				D6DF55422574506100D0AFCB /* Extensions */,
 				3DD141C02400313100154B8B /* MainScreen */,
 				3DD141C12400315900154B8B /* CollectionView */,
+				D6DF173E257567040093FB17 /* LaunchDetails */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -361,11 +370,21 @@
 			path = LaunchCell;
 			sourceTree = "<group>";
 		};
+		D6DF173E257567040093FB17 /* LaunchDetails */ = {
+			isa = PBXGroup;
+			children = (
+				D6DF1739257566FD0093FB17 /* LaunchDetailsViewController.swift */,
+				D6DF1742257567850093FB17 /* LaunchDetails.storyboard */,
+			);
+			path = LaunchDetails;
+			sourceTree = "<group>";
+		};
 		D6DF55342574466F00D0AFCB /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
 				D6DF5535257446C700D0AFCB /* ErrorPresentable.swift */,
 				D6DF553D2574486B00D0AFCB /* ErrorHandler.swift */,
+				D6DF1747257568510093FB17 /* Identifiable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -375,6 +394,7 @@
 			children = (
 				D6DF55432574507700D0AFCB /* Collection.swift */,
 				D65289E725746CBB006A03D1 /* UIEdgeInsets.swift */,
+				D6DF1734257566B80093FB17 /* UIViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -492,6 +512,7 @@
 				D62CC9A22545F8040025FB98 /* ChatViewController.storyboard in Resources */,
 				3D5418F123E2BE3000A09252 /* LaunchScreen.storyboard in Resources */,
 				3DD141BD240030E800154B8B /* CollectionViewExample.storyboard in Resources */,
+				D6DF1743257567850093FB17 /* LaunchDetails.storyboard in Resources */,
 				D656CB6125743656000802CD /* LaunchCell.xib in Resources */,
 				3D5418EE23E2BE3000A09252 /* Assets.xcassets in Resources */,
 				3D5418EC23E2BE2E00A09252 /* Main.storyboard in Resources */,
@@ -645,6 +666,7 @@
 				3DD141BF2400312B00154B8B /* CollectionViewController.swift in Sources */,
 				D687EA2025464CBF002524CC /* OutgoingMessage.swift in Sources */,
 				D6DF553025743EB300D0AFCB /* LaunchCellModel.swift in Sources */,
+				D6DF173A257566FD0093FB17 /* LaunchDetailsViewController.swift in Sources */,
 				3DD141BF2400312B00154B8B /* CollectionViewController.swift in Sources */,
 				D6DF55442574507700D0AFCB /* Collection.swift in Sources */,
 				D65288A425745E52006A03D1 /* CollectionFlowLayout.swift in Sources */,
@@ -657,7 +679,9 @@
 				D656CA00257407C0000802CD /* Launch.swift in Sources */,
 				D656CA0D25741177000802CD /* CollectionInteractor.swift in Sources */,
 				D6DF5536257446C700D0AFCB /* ErrorPresentable.swift in Sources */,
+				D6DF1748257568510093FB17 /* Identifiable.swift in Sources */,
 				D656C9ED257403D7000802CD /* APIService.swift in Sources */,
+				D6DF1735257566B90093FB17 /* UIViewController.swift in Sources */,
 				3D5418E923E2BE2E00A09252 /* ViewController.swift in Sources */,
 				D656C9FA2574075E000802CD /* NetworkException.swift in Sources */,
 				3D5418E523E2BE2E00A09252 /* AppDelegate.swift in Sources */,
@@ -843,13 +867,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HW4PX7GDB5;
+				DEVELOPMENT_TEAM = GEW7T3V9U6;
 				INFOPLIST_FILE = SampleApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sample.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.development.sample.app;
 				PRODUCT_NAME = SampleApp;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -44,7 +44,7 @@ final class CollectionFlowLayout: UICollectionViewFlowLayout {
     
     public var itemHeight: CGFloat {
         let imageAspectRatio: CGFloat = 3 / 2
-        let bottomViewHeight: CGFloat = 100
+        let bottomViewHeight: CGFloat = 120
         let imageHeight = itemWidth * imageAspectRatio
 
         return imageHeight + bottomViewHeight

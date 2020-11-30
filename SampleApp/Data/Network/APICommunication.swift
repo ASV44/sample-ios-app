@@ -31,6 +31,6 @@ final class APICommunication: APIService {
             request.resume()
             
             return Disposables.create { request.cancel() }
-        }
+        }.subscribe(on: ConcurrentDispatchQueueScheduler(qos: .utility))
     }
 }

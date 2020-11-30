@@ -6,10 +6,6 @@ final class CollectionViewController: UIViewController {
 
     var interactor: CollectionViewOutput!
 
-    static var identifier: String {
-        return String(describing: self)
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,6 +49,16 @@ extension CollectionViewController: CollectionViewInput {
     func reloadData() {
         collectionView.reloadData()
     }
+    
+    func presentLaunchDetailsScreen(launch: Launch) {
+        let launchDetailsVC = instantiateViewController(
+            storyboardName: "LaunchDetails",
+            identifier: LaunchDetailsViewController.identifier,
+            type: LaunchDetailsViewController.self
+        )
+        
+        self.navigationController?.pushViewController(launchDetailsVC, animated: true)
+    }
 }
 
 extension CollectionViewController: UICollectionViewDataSource {
@@ -74,5 +80,11 @@ extension CollectionViewController: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
         return sectionInset
+    }
+}
+
+extension CollectionViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        interactor.didSelectItem(indexPath: indexPath)
     }
 }

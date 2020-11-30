@@ -20,8 +20,7 @@ extension Observable {
     }
     
     func run() -> Disposable {
-        return subscribe(on: ConcurrentDispatchQueueScheduler(qos: .utility))
-            .observe(on: MainScheduler.instance)
+        return self.observe(on: MainScheduler.instance)
             .subscribe()
     }
 }

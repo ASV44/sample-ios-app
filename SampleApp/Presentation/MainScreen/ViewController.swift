@@ -5,7 +5,7 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+
     @IBAction private func openCollectionViewScreen() {
         let collectionVC = instantiateViewController(
             storyboardName: "CollectionViewExample",
@@ -29,7 +29,7 @@ final class ViewController: UIViewController {
 
         navigationController?.pushViewController(chatVC, animated: true)
     }
-    
+
     private func instantiateViewController<T: UIViewController>(storyboardName: String,
                                                                 identifier: String,
                                                                 type: T.Type) -> T {
@@ -47,4 +47,3 @@ final class ViewController: UIViewController {
         return viewController
     }
 }
-
