@@ -13,116 +13,105 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="2hq-ep-tt4" customClass="LaunchCell" customModule="SampleApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="554" height="420"/>
+            <rect key="frame" x="0.0" y="0.0" width="283" height="344"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="OOQ-bs-qZ7">
-                <rect key="frame" x="0.0" y="0.0" width="554" height="420"/>
+                <rect key="frame" x="0.0" y="0.0" width="283" height="344"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0vd-GH-Fji">
-                        <rect key="frame" x="0.0" y="0.0" width="554" height="420"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dNK-uW-a1l">
+                        <rect key="frame" x="0.0" y="0.0" width="283" height="344"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dNK-uW-a1l">
-                                <rect key="frame" x="20" y="10" width="514" height="400"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kYU-Mf-4EV">
+                                <rect key="frame" x="0.0" y="0.0" width="283" height="283"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="kYU-Mf-4EV" secondAttribute="height" id="PkP-wv-qF5"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mission launch description text" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYE-Ek-yfa">
+                                <rect key="frame" x="8" y="291" width="267" height="37"/>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
+                                <color key="textColor" name="DashBlack"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1Sq-7J-Ft5">
+                                <rect key="frame" x="8" y="8" width="259" height="267"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kYU-Mf-4EV">
-                                        <rect key="frame" x="0.0" y="0.0" width="514" height="287.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="kYU-Mf-4EV" secondAttribute="height" multiplier="542:303" id="Ro2-Rg-GYY"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mission launch description text" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYE-Ek-yfa">
-                                        <rect key="frame" x="8" y="295.5" width="498" height="88.5"/>
-                                        <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
-                                        <color key="textColor" name="DashBlack"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Mission Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7es-t1-5JS">
+                                        <rect key="frame" x="0.0" y="0.0" width="259" height="33.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
+                                        <color key="textColor" name="DashCream"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="scrollRate">
+                                                <real key="value" value="1.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="scrollDuration">
+                                                <real key="value" value="18"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="leadingBuffer">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="trailingBuffer">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="animationDelay">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="fadeLength">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mission launch date" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qc8-xg-Cbs">
+                                        <rect key="frame" x="0.0" y="245.5" width="259" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                        <color key="textColor" name="DashCream"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1Sq-7J-Ft5">
-                                        <rect key="frame" x="8" y="8" width="490" height="271.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Mission Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7es-t1-5JS">
-                                                <rect key="frame" x="0.0" y="0.0" width="490" height="33.5"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
-                                                <color key="textColor" name="DashCream"/>
-                                                <nil key="highlightedColor"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="scrollRate">
-                                                        <real key="value" value="1.5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="scrollDuration">
-                                                        <real key="value" value="18"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="leadingBuffer">
-                                                        <real key="value" value="5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="trailingBuffer">
-                                                        <real key="value" value="5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="animationDelay">
-                                                        <real key="value" value="1"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="fadeLength">
-                                                        <real key="value" value="5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mission launch date" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qc8-xg-Cbs">
-                                                <rect key="frame" x="0.0" y="250" width="490" height="21.5"/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                                <color key="textColor" name="DashCream"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="7es-t1-5JS" firstAttribute="leading" secondItem="1Sq-7J-Ft5" secondAttribute="leading" id="5WU-d2-uIq"/>
-                                            <constraint firstItem="qc8-xg-Cbs" firstAttribute="leading" secondItem="1Sq-7J-Ft5" secondAttribute="leading" id="QV2-5s-Wq4"/>
-                                            <constraint firstAttribute="bottom" secondItem="qc8-xg-Cbs" secondAttribute="bottom" id="i2Z-Mi-y48"/>
-                                            <constraint firstAttribute="trailing" secondItem="qc8-xg-Cbs" secondAttribute="trailing" id="k6h-l0-tyN"/>
-                                            <constraint firstItem="7es-t1-5JS" firstAttribute="top" secondItem="1Sq-7J-Ft5" secondAttribute="top" id="tFG-ch-X8R"/>
-                                            <constraint firstAttribute="trailing" secondItem="7es-t1-5JS" secondAttribute="trailing" id="yF9-8U-uPa"/>
-                                        </constraints>
-                                    </stackView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="kYU-Mf-4EV" firstAttribute="top" secondItem="dNK-uW-a1l" secondAttribute="top" id="4Pq-BF-efJ"/>
-                                    <constraint firstItem="kYU-Mf-4EV" firstAttribute="leading" secondItem="dNK-uW-a1l" secondAttribute="leading" id="Bet-3U-A0P"/>
-                                    <constraint firstAttribute="bottom" secondItem="bYE-Ek-yfa" secondAttribute="bottom" constant="16" id="EDj-bn-H6F"/>
-                                    <constraint firstItem="bYE-Ek-yfa" firstAttribute="top" secondItem="1Sq-7J-Ft5" secondAttribute="bottom" constant="16" id="GuN-uh-Ywd"/>
-                                    <constraint firstAttribute="trailing" secondItem="kYU-Mf-4EV" secondAttribute="trailing" id="N9a-aQ-i9y"/>
-                                    <constraint firstAttribute="trailing" secondItem="bYE-Ek-yfa" secondAttribute="trailing" constant="8" id="NCh-2f-Q0e"/>
-                                    <constraint firstItem="bYE-Ek-yfa" firstAttribute="top" secondItem="kYU-Mf-4EV" secondAttribute="bottom" constant="8" id="ars-tt-kJ5"/>
-                                    <constraint firstItem="1Sq-7J-Ft5" firstAttribute="leading" secondItem="dNK-uW-a1l" secondAttribute="leading" constant="8" id="hvL-RK-Tj2"/>
-                                    <constraint firstItem="1Sq-7J-Ft5" firstAttribute="top" secondItem="dNK-uW-a1l" secondAttribute="top" constant="8" id="mEn-ST-FeM"/>
-                                    <constraint firstItem="bYE-Ek-yfa" firstAttribute="leading" secondItem="dNK-uW-a1l" secondAttribute="leading" constant="8" id="sh6-wD-MM0"/>
-                                    <constraint firstAttribute="trailing" secondItem="1Sq-7J-Ft5" secondAttribute="trailing" constant="16" id="x17-T5-VJi"/>
+                                    <constraint firstItem="7es-t1-5JS" firstAttribute="leading" secondItem="1Sq-7J-Ft5" secondAttribute="leading" id="5WU-d2-uIq"/>
+                                    <constraint firstItem="qc8-xg-Cbs" firstAttribute="leading" secondItem="1Sq-7J-Ft5" secondAttribute="leading" id="QV2-5s-Wq4"/>
+                                    <constraint firstAttribute="bottom" secondItem="qc8-xg-Cbs" secondAttribute="bottom" id="i2Z-Mi-y48"/>
+                                    <constraint firstAttribute="trailing" secondItem="qc8-xg-Cbs" secondAttribute="trailing" id="k6h-l0-tyN"/>
+                                    <constraint firstItem="7es-t1-5JS" firstAttribute="top" secondItem="1Sq-7J-Ft5" secondAttribute="top" id="tFG-ch-X8R"/>
+                                    <constraint firstAttribute="trailing" secondItem="7es-t1-5JS" secondAttribute="trailing" id="yF9-8U-uPa"/>
                                 </constraints>
-                            </view>
+                            </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="dNK-uW-a1l" secondAttribute="trailing" constant="20" id="IDp-6j-LCD"/>
-                            <constraint firstItem="dNK-uW-a1l" firstAttribute="leading" secondItem="0vd-GH-Fji" secondAttribute="leading" constant="20" id="ani-dz-GNu"/>
-                            <constraint firstAttribute="bottom" secondItem="dNK-uW-a1l" secondAttribute="bottom" constant="10" id="uVc-4f-iRC"/>
-                            <constraint firstItem="dNK-uW-a1l" firstAttribute="top" secondItem="0vd-GH-Fji" secondAttribute="top" constant="10" id="ucy-Sh-ejx"/>
+                            <constraint firstItem="kYU-Mf-4EV" firstAttribute="top" secondItem="dNK-uW-a1l" secondAttribute="top" id="4Pq-BF-efJ"/>
+                            <constraint firstItem="kYU-Mf-4EV" firstAttribute="leading" secondItem="dNK-uW-a1l" secondAttribute="leading" id="Bet-3U-A0P"/>
+                            <constraint firstAttribute="bottom" secondItem="bYE-Ek-yfa" secondAttribute="bottom" constant="16" id="EDj-bn-H6F"/>
+                            <constraint firstItem="bYE-Ek-yfa" firstAttribute="top" secondItem="1Sq-7J-Ft5" secondAttribute="bottom" constant="16" id="GuN-uh-Ywd"/>
+                            <constraint firstAttribute="trailing" secondItem="kYU-Mf-4EV" secondAttribute="trailing" id="N9a-aQ-i9y"/>
+                            <constraint firstAttribute="trailing" secondItem="bYE-Ek-yfa" secondAttribute="trailing" constant="8" id="NCh-2f-Q0e"/>
+                            <constraint firstItem="bYE-Ek-yfa" firstAttribute="top" secondItem="kYU-Mf-4EV" secondAttribute="bottom" constant="8" id="ars-tt-kJ5"/>
+                            <constraint firstItem="1Sq-7J-Ft5" firstAttribute="leading" secondItem="dNK-uW-a1l" secondAttribute="leading" constant="8" id="hvL-RK-Tj2"/>
+                            <constraint firstItem="1Sq-7J-Ft5" firstAttribute="top" secondItem="dNK-uW-a1l" secondAttribute="top" constant="8" id="mEn-ST-FeM"/>
+                            <constraint firstItem="bYE-Ek-yfa" firstAttribute="leading" secondItem="dNK-uW-a1l" secondAttribute="leading" constant="8" id="sh6-wD-MM0"/>
+                            <constraint firstAttribute="trailing" secondItem="1Sq-7J-Ft5" secondAttribute="trailing" constant="16" id="x17-T5-VJi"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="0vd-GH-Fji" firstAttribute="leading" secondItem="OOQ-bs-qZ7" secondAttribute="leading" id="KVx-tc-Ctd"/>
-                    <constraint firstAttribute="trailing" secondItem="0vd-GH-Fji" secondAttribute="trailing" id="T6i-b6-Z50"/>
-                    <constraint firstItem="0vd-GH-Fji" firstAttribute="top" secondItem="OOQ-bs-qZ7" secondAttribute="top" id="by5-70-DII"/>
-                    <constraint firstAttribute="bottom" secondItem="0vd-GH-Fji" secondAttribute="bottom" id="jtP-Nd-GAd"/>
+                    <constraint firstAttribute="trailing" secondItem="dNK-uW-a1l" secondAttribute="trailing" id="KfB-h9-jO4"/>
+                    <constraint firstAttribute="bottom" secondItem="dNK-uW-a1l" secondAttribute="bottom" id="Uns-AU-AnP"/>
+                    <constraint firstItem="dNK-uW-a1l" firstAttribute="leading" secondItem="OOQ-bs-qZ7" secondAttribute="leading" id="uNV-IC-FzN"/>
+                    <constraint firstItem="dNK-uW-a1l" firstAttribute="top" secondItem="OOQ-bs-qZ7" secondAttribute="top" id="w68-8B-lmw"/>
                 </constraints>
             </collectionViewCellContentView>
+            <size key="customSize" width="283" height="344"/>
             <connections>
                 <outlet property="descriptionLabel" destination="bYE-Ek-yfa" id="oHY-Dr-IVO"/>
                 <outlet property="imageView" destination="kYU-Mf-4EV" id="Rxl-Pg-e75"/>
                 <outlet property="missionLaunchDateLabel" destination="qc8-xg-Cbs" id="Ft6-dd-zo1"/>
                 <outlet property="missionNameLabel" destination="7es-t1-5JS" id="qCP-Vq-Zer"/>
             </connections>
-            <point key="canvasLocation" x="-564" y="334"/>
+            <point key="canvasLocation" x="-761.59420289855075" y="358.92857142857139"/>
         </collectionViewCell>
     </objects>
     <resources>

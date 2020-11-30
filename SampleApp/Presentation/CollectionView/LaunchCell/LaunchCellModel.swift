@@ -18,6 +18,10 @@ struct LaunchCellModel {
     }
     
     var formattedDate: String {
-        return DateFormatter().string(from: date)
+        let formatter = DateFormatter()
+        formatter.timeStyle = DateFormatter.Style.short
+        formatter.dateStyle = DateFormatter.Style.medium
+        
+        return formatter.string(from: date)
     }
 }

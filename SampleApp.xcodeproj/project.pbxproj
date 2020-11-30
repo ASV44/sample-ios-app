@@ -24,6 +24,11 @@
 		D62CC9A22545F8040025FB98 /* ChatViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D62CC9A12545F8040025FB98 /* ChatViewController.storyboard */; };
 		D62CC9AD2545FA700025FB98 /* ChatInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62CC9AC2545FA700025FB98 /* ChatInteractor.swift */; };
 		D62CC9B22545FA7A0025FB98 /* ChatViewIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62CC9B12545FA7A0025FB98 /* ChatViewIO.swift */; };
+		4A0FDF26CAEE551549F33527 /* Pods_SampleApp_SampleAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB8D146E26E92523623B2ECB /* Pods_SampleApp_SampleAppUITests.framework */; };
+		9ECC604DA663F1D7C6081881 /* Pods_SampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C4B34102B9D8788424D443 /* Pods_SampleApp.framework */; };
+		D65288A425745E52006A03D1 /* CollectionFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65288A325745E52006A03D1 /* CollectionFlowLayout.swift */; };
+		D65289E325746707006A03D1 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65289E225746707006A03D1 /* Window.swift */; };
+		D65289E825746CBB006A03D1 /* UIEdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65289E725746CBB006A03D1 /* UIEdgeInsets.swift */; };
 		D656C9ED257403D7000802CD /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656C9EC257403D7000802CD /* APIService.swift */; };
 		D656C9F5257403ED000802CD /* APICommunication.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656C9F4257403ED000802CD /* APICommunication.swift */; };
 		D656C9FA2574075E000802CD /* NetworkException.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656C9F92574075E000802CD /* NetworkException.swift */; };
@@ -92,6 +97,9 @@
 		D62CC9A12545F8040025FB98 /* ChatViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatViewController.storyboard; sourceTree = "<group>"; };
 		D62CC9AC2545FA700025FB98 /* ChatInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInteractor.swift; sourceTree = "<group>"; };
 		D62CC9B12545FA7A0025FB98 /* ChatViewIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewIO.swift; sourceTree = "<group>"; };
+		D65288A325745E52006A03D1 /* CollectionFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionFlowLayout.swift; sourceTree = "<group>"; };
+		D65289E225746707006A03D1 /* Window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
+		D65289E725746CBB006A03D1 /* UIEdgeInsets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEdgeInsets.swift; sourceTree = "<group>"; };
 		D656C9EC257403D7000802CD /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		D656C9F4257403ED000802CD /* APICommunication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICommunication.swift; sourceTree = "<group>"; };
 		D656C9F92574075E000802CD /* NetworkException.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkException.swift; sourceTree = "<group>"; };
@@ -213,6 +221,7 @@
 		3DD141C12400315900154B8B /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				D65288A225745E2A006A03D1 /* Layout */,
 				D656CB5A2574362D000802CD /* LaunchCell */,
 				3DD141BC240030E800154B8B /* CollectionViewExample.storyboard */,
 				3DD141BE2400312B00154B8B /* CollectionViewController.swift */,
@@ -256,6 +265,15 @@
 				D62CC9B12545FA7A0025FB98 /* ChatViewIO.swift */,
 			);
 			path = Chat;
+			sourceTree = "<group>";
+		};
+		D65288A225745E2A006A03D1 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				D65288A325745E52006A03D1 /* CollectionFlowLayout.swift */,
+				D65289E225746707006A03D1 /* Window.swift */,
+			);
+			path = Layout;
 			sourceTree = "<group>";
 		};
 		D656C9E925740379000802CD /* Presentation */ = {
@@ -356,6 +374,7 @@
 			isa = PBXGroup;
 			children = (
 				D6DF55432574507700D0AFCB /* Collection.swift */,
+				D65289E725746CBB006A03D1 /* UIEdgeInsets.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -628,8 +647,10 @@
 				D6DF553025743EB300D0AFCB /* LaunchCellModel.swift in Sources */,
 				3DD141BF2400312B00154B8B /* CollectionViewController.swift in Sources */,
 				D6DF55442574507700D0AFCB /* Collection.swift in Sources */,
+				D65288A425745E52006A03D1 /* CollectionFlowLayout.swift in Sources */,
 				D656CA1225741183000802CD /* CollectionViewIO.swift in Sources */,
 				D656C9F5257403ED000802CD /* APICommunication.swift in Sources */,
+				D65289E825746CBB006A03D1 /* UIEdgeInsets.swift in Sources */,
 				D656CA0825740FE8000802CD /* URL.swift in Sources */,
 				D6DF553E2574486B00D0AFCB /* ErrorHandler.swift in Sources */,
 				D656CA19257413AB000802CD /* Observable.swift in Sources */,
@@ -646,6 +667,7 @@
 				D662CCE225478B20009B6E6A /* KeyboardInfo.swift in Sources */,
 				D662CCDC25478AF8009B6E6A /* Keyboard.swift in Sources */,
 				D656CB5C25743644000802CD /* LaunchCell.swift in Sources */,
+				D65289E325746707006A03D1 /* Window.swift in Sources */,
 				3D5418E723E2BE2E00A09252 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
