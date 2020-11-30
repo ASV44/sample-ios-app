@@ -49,6 +49,14 @@
 		D6DF173A257566FD0093FB17 /* LaunchDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DF1739257566FD0093FB17 /* LaunchDetailsViewController.swift */; };
 		D6DF1743257567850093FB17 /* LaunchDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6DF1742257567850093FB17 /* LaunchDetails.storyboard */; };
 		D6DF1748257568510093FB17 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DF1747257568510093FB17 /* Identifiable.swift */; };
+		D6DF175B257576D30093FB17 /* LaunchDetailsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DF175A257576D30093FB17 /* LaunchDetailsHeaderView.swift */; };
+		D6DF1763257578950093FB17 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DF1762257578950093FB17 /* NibLoadable.swift */; };
+		D6DF1768257578DF0093FB17 /* LaunchDetailsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6DF1767257578DF0093FB17 /* LaunchDetailsHeaderView.xib */; };
+		D6DF176D25757F240093FB17 /* LaunchDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DF176C25757F240093FB17 /* LaunchDetailsInteractor.swift */; };
+		D6DF177225757F570093FB17 /* LaunchDetailsViewIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DF177125757F570093FB17 /* LaunchDetailsViewIO.swift */; };
+		D6DF1777257585B00093FB17 /* LaunchDetailsHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DF1776257585B00093FB17 /* LaunchDetailsHeaderViewModel.swift */; };
+		D6DF177C25758B650093FB17 /* LaunchDetailsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DF177B25758B650093FB17 /* LaunchDetailsCellViewModel.swift */; };
+		D6DF178C2575958F0093FB17 /* LaunchDetailsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DF178B2575958F0093FB17 /* LaunchDetailsSection.swift */; };
 		D6DF553025743EB300D0AFCB /* LaunchCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DF552F25743EB300D0AFCB /* LaunchCellModel.swift */; };
 		D6DF5536257446C700D0AFCB /* ErrorPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DF5535257446C700D0AFCB /* ErrorPresentable.swift */; };
 		D6DF553E2574486B00D0AFCB /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DF553D2574486B00D0AFCB /* ErrorHandler.swift */; };
@@ -124,6 +132,14 @@
 		D6DF1739257566FD0093FB17 /* LaunchDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailsViewController.swift; sourceTree = "<group>"; };
 		D6DF1742257567850093FB17 /* LaunchDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchDetails.storyboard; sourceTree = "<group>"; };
 		D6DF1747257568510093FB17 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
+		D6DF175A257576D30093FB17 /* LaunchDetailsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailsHeaderView.swift; sourceTree = "<group>"; };
+		D6DF1762257578950093FB17 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
+		D6DF1767257578DF0093FB17 /* LaunchDetailsHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchDetailsHeaderView.xib; sourceTree = "<group>"; };
+		D6DF176C25757F240093FB17 /* LaunchDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailsInteractor.swift; sourceTree = "<group>"; };
+		D6DF177125757F570093FB17 /* LaunchDetailsViewIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailsViewIO.swift; sourceTree = "<group>"; };
+		D6DF1776257585B00093FB17 /* LaunchDetailsHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailsHeaderViewModel.swift; sourceTree = "<group>"; };
+		D6DF177B25758B650093FB17 /* LaunchDetailsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailsCellViewModel.swift; sourceTree = "<group>"; };
+		D6DF178B2575958F0093FB17 /* LaunchDetailsSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchDetailsSection.swift; sourceTree = "<group>"; };
 		D6DF552F25743EB300D0AFCB /* LaunchCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCellModel.swift; sourceTree = "<group>"; };
 		D6DF5535257446C700D0AFCB /* ErrorPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorPresentable.swift; sourceTree = "<group>"; };
 		D6DF553D2574486B00D0AFCB /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
@@ -373,10 +389,25 @@
 		D6DF173E257567040093FB17 /* LaunchDetails */ = {
 			isa = PBXGroup;
 			children = (
+				D6DF1759257576A90093FB17 /* LaunchDetailsHeaderView */,
 				D6DF1739257566FD0093FB17 /* LaunchDetailsViewController.swift */,
 				D6DF1742257567850093FB17 /* LaunchDetails.storyboard */,
+				D6DF176C25757F240093FB17 /* LaunchDetailsInteractor.swift */,
+				D6DF177125757F570093FB17 /* LaunchDetailsViewIO.swift */,
+				D6DF177B25758B650093FB17 /* LaunchDetailsCellViewModel.swift */,
+				D6DF178B2575958F0093FB17 /* LaunchDetailsSection.swift */,
 			);
 			path = LaunchDetails;
+			sourceTree = "<group>";
+		};
+		D6DF1759257576A90093FB17 /* LaunchDetailsHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				D6DF175A257576D30093FB17 /* LaunchDetailsHeaderView.swift */,
+				D6DF1767257578DF0093FB17 /* LaunchDetailsHeaderView.xib */,
+				D6DF1776257585B00093FB17 /* LaunchDetailsHeaderViewModel.swift */,
+			);
+			path = LaunchDetailsHeaderView;
 			sourceTree = "<group>";
 		};
 		D6DF55342574466F00D0AFCB /* Protocols */ = {
@@ -385,6 +416,7 @@
 				D6DF5535257446C700D0AFCB /* ErrorPresentable.swift */,
 				D6DF553D2574486B00D0AFCB /* ErrorHandler.swift */,
 				D6DF1747257568510093FB17 /* Identifiable.swift */,
+				D6DF1762257578950093FB17 /* NibLoadable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -513,6 +545,7 @@
 				3D5418F123E2BE3000A09252 /* LaunchScreen.storyboard in Resources */,
 				3DD141BD240030E800154B8B /* CollectionViewExample.storyboard in Resources */,
 				D6DF1743257567850093FB17 /* LaunchDetails.storyboard in Resources */,
+				D6DF1768257578DF0093FB17 /* LaunchDetailsHeaderView.xib in Resources */,
 				D656CB6125743656000802CD /* LaunchCell.xib in Resources */,
 				3D5418EE23E2BE3000A09252 /* Assets.xcassets in Resources */,
 				3D5418EC23E2BE2E00A09252 /* Main.storyboard in Resources */,
@@ -676,14 +709,19 @@
 				D656CA0825740FE8000802CD /* URL.swift in Sources */,
 				D6DF553E2574486B00D0AFCB /* ErrorHandler.swift in Sources */,
 				D656CA19257413AB000802CD /* Observable.swift in Sources */,
+				D6DF1777257585B00093FB17 /* LaunchDetailsHeaderViewModel.swift in Sources */,
 				D656CA00257407C0000802CD /* Launch.swift in Sources */,
 				D656CA0D25741177000802CD /* CollectionInteractor.swift in Sources */,
 				D6DF5536257446C700D0AFCB /* ErrorPresentable.swift in Sources */,
+				D6DF177C25758B650093FB17 /* LaunchDetailsCellViewModel.swift in Sources */,
 				D6DF1748257568510093FB17 /* Identifiable.swift in Sources */,
 				D656C9ED257403D7000802CD /* APIService.swift in Sources */,
 				D6DF1735257566B90093FB17 /* UIViewController.swift in Sources */,
+				D6DF177225757F570093FB17 /* LaunchDetailsViewIO.swift in Sources */,
 				3D5418E923E2BE2E00A09252 /* ViewController.swift in Sources */,
+				D6DF1763257578950093FB17 /* NibLoadable.swift in Sources */,
 				D656C9FA2574075E000802CD /* NetworkException.swift in Sources */,
+				D6DF176D25757F240093FB17 /* LaunchDetailsInteractor.swift in Sources */,
 				3D5418E523E2BE2E00A09252 /* AppDelegate.swift in Sources */,
 				D687EA162546236D002524CC /* User.swift in Sources */,
 				D62CC9B22545FA7A0025FB98 /* ChatViewIO.swift in Sources */,
@@ -691,8 +729,10 @@
 				D662CCE225478B20009B6E6A /* KeyboardInfo.swift in Sources */,
 				D662CCDC25478AF8009B6E6A /* Keyboard.swift in Sources */,
 				D656CB5C25743644000802CD /* LaunchCell.swift in Sources */,
+				D6DF175B257576D30093FB17 /* LaunchDetailsHeaderView.swift in Sources */,
 				D65289E325746707006A03D1 /* Window.swift in Sources */,
 				3D5418E723E2BE2E00A09252 /* SceneDelegate.swift in Sources */,
+				D6DF178C2575958F0093FB17 /* LaunchDetailsSection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

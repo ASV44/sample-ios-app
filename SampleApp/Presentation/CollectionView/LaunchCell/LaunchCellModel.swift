@@ -5,21 +5,13 @@ struct LaunchCellModel {
     let success: Bool
     let flightNumber: Int
     let missionName: String
-    let date: Date
+    let date: String
     
     init(launch: Launch) {
         imageURL = launch.links.flickr.original.first
         success = launch.success
         flightNumber = launch.flightNumber
         missionName = launch.missionName
-        date = Date(timeIntervalSince1970: launch.dateUnix)
-    }
-    
-    var formattedDate: String {
-        let formatter = DateFormatter()
-        formatter.timeStyle = DateFormatter.Style.short
-        formatter.dateStyle = DateFormatter.Style.medium
-        
-        return formatter.string(from: date)
+        date = launch.formattedDate
     }
 }

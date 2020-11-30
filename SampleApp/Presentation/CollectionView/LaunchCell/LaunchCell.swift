@@ -2,7 +2,7 @@ import UIKit
 import Kingfisher
 
 final class LaunchCell: UICollectionViewCell {
-    static var identifier = "ForecastCell"
+    static var identifier = "LaunchCell"
 
     @IBOutlet private var imageView: UIImageView!
     @IBOutlet private var launchStatus: UILabel!
@@ -31,6 +31,6 @@ final class LaunchCell: UICollectionViewCell {
         launchStatus.textColor = cellModel.success ? .green : .red
         flightNumberLabel.text = "#\(cellModel.flightNumber)"
         missionNameLabel.text = cellModel.missionName
-        missionLaunchDateLabel.text = cellModel.formattedDate
+        missionLaunchDateLabel.text = cellModel.date
     }
 }

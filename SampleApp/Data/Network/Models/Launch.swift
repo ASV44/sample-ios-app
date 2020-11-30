@@ -15,6 +15,7 @@ struct Launch: Codable {
     let dateUnix: Double
     let dateLocal: String
     let upcoming: Bool
+    let cores: [Core]
     let ID: String
     
     enum CodingKeys: String, CodingKey {
@@ -32,6 +33,7 @@ struct Launch: Codable {
         case dateUnix = "date_unix"
         case dateLocal = "date_local"
         case upcoming
+        case cores
         case ID = "id"
     }
     
@@ -60,5 +62,72 @@ struct Launch: Codable {
         struct Flickr: Codable {
             let original: [URL]
         }
+    }
+    
+    struct Core: Codable {
+        let coreID: String
+        let flight: Int
+        let gridfins: Bool
+        let legs: Bool
+        let reused: Bool
+        let landingAttempt: Bool
+        let landingSuccess: Bool?
+        let landingType: String?
+        let landpad: String?
+        
+        enum CodingKeys: String, CodingKey {
+            case coreID = "core"
+            case flight
+            case gridfins
+            case legs
+            case reused
+            case landingAttempt = "landing_attempt"
+            case landingSuccess = "landing_success"
+            case landingType = "landing_type"
+            case landpad
+        }
+        
+        func getCoreValue(for section: LaunchDetailsSection.Core) -> String {
+            switch section {
+            case .fligth:
+                return "#\(flight)"
+            case .gridfins:
+                return String(gridfins)
+            case .landingAttempt:
+                return String(landingAttempt)
+            case .landingSuccess:
+                return String(landingSuccess) ?? ""
+            case .landingType:
+                return landingType ?? ""
+            case .reused:
+                return String(reused)
+            }
+        }
+    }
+    
+    var formattedDate: String {
+        let formatter = DateFormatter()
+        formatter.timeStyle = DateFormatter.Style.short
+        formatter.dateStyle = DateFormatter.Style.medium
+        
+        return formatter.string(from: Date(timeIntervalSince1970: dateUnix))
+    }
+    
+    func getFlightValue(for section: LaunchDetailsSection.Fligth) -> String {
+        switch section {
+        case .fligthNumber:
+            return "#\(flightNumber)"
+        case .launchDate:
+            return formattedDate
+        case .success:
+            return String(success)
+        }
+    }
+}
+
+extension String {
+    init?(_ value: Bool?) {
+        guard let value = value else { return nil }
+        self.init(value)
     }
 }

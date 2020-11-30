@@ -56,6 +56,8 @@ extension CollectionViewController: CollectionViewInput {
             identifier: LaunchDetailsViewController.identifier,
             type: LaunchDetailsViewController.self
         )
+        let interactor = LaunchDetailsInteractor(view: launchDetailsVC, launch: launch)
+        launchDetailsVC.interactor = interactor
         
         self.navigationController?.pushViewController(launchDetailsVC, animated: true)
     }
