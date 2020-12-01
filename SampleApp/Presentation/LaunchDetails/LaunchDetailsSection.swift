@@ -1,19 +1,19 @@
 enum LaunchDetailsSection: String, CaseIterable {
-    case fligth
-    case core
+    case fligth = "Flight"
+    case core = "Core"
 
     enum Fligth: String, CaseIterable {
-        case fligthNumber
-        case launchDate
-        case success
+        case fligthNumber = "Flight Number"
+        case launchDate = "Launch Date"
+        case success = "Success"
     }
 
     enum Core: String, CaseIterable {
-        case fligth
-        case gridfins
-        case reused
-        case landingAttempt
-        case landingSuccess
-        case landingType
+        case fligth = "Flight"
+        case gridfins = "Gridfins"
+        case reused = "Reused"
+        case landingAttempt = "Landing Attempt"
+        case landingSuccess = "Landing Success"
+        case landingType = "Landing Type"
     }
 }

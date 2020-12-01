@@ -13,6 +13,23 @@ final class LaunchDetailsViewController: UIViewController {
         tableView.tableHeaderView = launchDetailsHeaderView
         interactor.viewDidLoad()
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        configureTableViewHeader()
+    }
+    
+    private func configureTableViewHeader() {
+        let contentSize = tableView.contentSize.height - launchDetailsHeaderView.frame.size.height
+        let heightScaleFactor: CGFloat = 0.8
+        let descriptionHeightConstant: CGFloat = 120
+        launchDetailsHeaderView.frame.size = CGSize(
+            width: launchDetailsHeaderView.frame.size.width,
+            height: heightScaleFactor * launchDetailsHeaderView.frame.size.width + descriptionHeightConstant
+        )
+        tableView.contentSize.height = launchDetailsHeaderView.frame.size.height + contentSize
+    }
 }
 
 extension LaunchDetailsViewController: LaunchDetailsViewInput {
