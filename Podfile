@@ -12,6 +12,7 @@ target 'SampleApp' do
   pod 'RxCocoa', '6.0.0-rc.2'
   pod 'Kingfisher', '~> 5.0'
   pod "youtube-ios-player-helper", "~> 1.0.2"
+  pod 'ReachabilitySwift'
 
   target 'SampleAppTests' do
     inherit! :search_paths

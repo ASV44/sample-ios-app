@@ -2,6 +2,11 @@ import RxSwift
 import Alamofire
 
 final class APICommunication: APIService {
+    let reachability: ReachabilityType?
+    
+    init(reachability: ReachabilityType?) {
+        self.reachability = reachability
+    }
     
     func getLatestLaunches() -> Observable<[Launch]> {
         return getRequest(to: Url.launchesPast, method: .get).map { (launches: [Launch]) -> [Launch] in launches.reversed() }
@@ -17,6 +22,7 @@ final class APICommunication: APIService {
         method: HTTPMethod,
         headers: HTTPHeaders? = nil
     ) -> Observable<T> {
+        guard let isReachable = reachability?.isReachable, isReachable else { return Observable.error(Exception.NetworkConnection) }
         return Observable.create { observer in
             let request = AF.request(url,
                                      method: method,

@@ -7,7 +7,7 @@ enum Exception: Error {
     var message: String {
         switch self {
         case .NetworkConnection:
-            return "Network connection error"
+            return "Network connection error. No internet"
         case .HTTP(let error, _):
             return error.localizedDescription
         }

@@ -1,4 +1,5 @@
 import UIKit
+import Reachability
 
 final class ViewController: UIViewController {
 
@@ -12,7 +13,7 @@ final class ViewController: UIViewController {
             identifier: CollectionViewController.identifier,
             type: CollectionViewController.self
         )
-        let collectionInteractor = CollectionInteractor(view: collectionVC, apiService: APICommunication())
+        let collectionInteractor = CollectionInteractor(view: collectionVC, apiService: APICommunication(reachability: try? Reachability()))
         collectionVC.interactor = collectionInteractor
 
         navigationController?.pushViewController(collectionVC, animated: true)

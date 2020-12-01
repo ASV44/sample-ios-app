@@ -46,6 +46,7 @@
 		D656CB5C25743644000802CD /* LaunchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656CB5B25743644000802CD /* LaunchCell.swift */; };
 		D656CB6125743656000802CD /* LaunchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D656CB6025743656000802CD /* LaunchCell.xib */; };
 		D68710942575C1000001EE1F /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68710932575C1000001EE1F /* Rocket.swift */; };
+		D68710A82575CF220001EE1F /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68710A72575CF220001EE1F /* Reachability.swift */; };
 		D6DF1735257566B90093FB17 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DF1734257566B80093FB17 /* UIViewController.swift */; };
 		D6DF173A257566FD0093FB17 /* LaunchDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DF1739257566FD0093FB17 /* LaunchDetailsViewController.swift */; };
 		D6DF1743257567850093FB17 /* LaunchDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6DF1742257567850093FB17 /* LaunchDetails.storyboard */; };
@@ -130,6 +131,7 @@
 		D656CB5B25743644000802CD /* LaunchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCell.swift; sourceTree = "<group>"; };
 		D656CB6025743656000802CD /* LaunchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchCell.xib; sourceTree = "<group>"; };
 		D68710932575C1000001EE1F /* Rocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
+		D68710A72575CF220001EE1F /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		D6DF1734257566B80093FB17 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		D6DF1739257566FD0093FB17 /* LaunchDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailsViewController.swift; sourceTree = "<group>"; };
 		D6DF1742257567850093FB17 /* LaunchDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchDetails.storyboard; sourceTree = "<group>"; };
@@ -332,6 +334,7 @@
 				D656C9F4257403ED000802CD /* APICommunication.swift */,
 				D656C9F92574075E000802CD /* NetworkException.swift */,
 				D656CA0725740FE8000802CD /* URL.swift */,
+				D68710A72575CF220001EE1F /* Reachability.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -738,6 +741,7 @@
 				D6DF175B257576D30093FB17 /* LaunchDetailsHeaderView.swift in Sources */,
 				D65289E325746707006A03D1 /* Window.swift in Sources */,
 				3D5418E723E2BE2E00A09252 /* SceneDelegate.swift in Sources */,
+				D68710A82575CF220001EE1F /* Reachability.swift in Sources */,
 				D6DF178C2575958F0093FB17 /* LaunchDetailsSection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
