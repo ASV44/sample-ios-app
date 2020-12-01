@@ -7,6 +7,10 @@ final class APICommunication: APIService {
         return getRequest(to: Url.launchesPast, method: .get).map { (launches: [Launch]) -> [Launch] in launches.reversed() }
     }
     
+    func getRocket(id: String) -> Observable<Rocket> {
+        return getRequest(to: "\(Url.rockets)/\(id)", method: .get)
+    }
+    
     func getRequest<T: Codable>(
         to url: String,
         with parameters: Parameters! = [:],

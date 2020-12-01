@@ -45,6 +45,7 @@
 		D687EA2025464CBF002524CC /* OutgoingMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D687EA1F25464CBF002524CC /* OutgoingMessage.swift */; };
 		D656CB5C25743644000802CD /* LaunchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656CB5B25743644000802CD /* LaunchCell.swift */; };
 		D656CB6125743656000802CD /* LaunchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D656CB6025743656000802CD /* LaunchCell.xib */; };
+		D68710942575C1000001EE1F /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68710932575C1000001EE1F /* Rocket.swift */; };
 		D6DF1735257566B90093FB17 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DF1734257566B80093FB17 /* UIViewController.swift */; };
 		D6DF173A257566FD0093FB17 /* LaunchDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DF1739257566FD0093FB17 /* LaunchDetailsViewController.swift */; };
 		D6DF1743257567850093FB17 /* LaunchDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6DF1742257567850093FB17 /* LaunchDetails.storyboard */; };
@@ -128,6 +129,7 @@
 		D687EA1F25464CBF002524CC /* OutgoingMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutgoingMessage.swift; sourceTree = "<group>"; };
 		D656CB5B25743644000802CD /* LaunchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCell.swift; sourceTree = "<group>"; };
 		D656CB6025743656000802CD /* LaunchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchCell.xib; sourceTree = "<group>"; };
+		D68710932575C1000001EE1F /* Rocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
 		D6DF1734257566B80093FB17 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		D6DF1739257566FD0093FB17 /* LaunchDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailsViewController.swift; sourceTree = "<group>"; };
 		D6DF1742257567850093FB17 /* LaunchDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchDetails.storyboard; sourceTree = "<group>"; };
@@ -338,6 +340,7 @@
 			isa = PBXGroup;
 			children = (
 				D656C9FF257407C0000802CD /* Launch.swift */,
+				D68710932575C1000001EE1F /* Rocket.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -723,6 +726,7 @@
 				3D5418E923E2BE2E00A09252 /* ViewController.swift in Sources */,
 				D6DF1763257578950093FB17 /* NibLoadable.swift in Sources */,
 				D656C9FA2574075E000802CD /* NetworkException.swift in Sources */,
+				D68710942575C1000001EE1F /* Rocket.swift in Sources */,
 				D6DF176D25757F240093FB17 /* LaunchDetailsInteractor.swift in Sources */,
 				3D5418E523E2BE2E00A09252 /* AppDelegate.swift in Sources */,
 				D687EA162546236D002524CC /* User.swift in Sources */,

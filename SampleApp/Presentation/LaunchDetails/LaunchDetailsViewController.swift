@@ -2,6 +2,7 @@ import UIKit
 
 final class LaunchDetailsViewController: UIViewController {
     @IBOutlet private var tableView: UITableView!
+    @IBOutlet private var loadingIndicator: UIActivityIndicatorView!
     
     private let launchDetailsHeaderView = LaunchDetailsHeaderView.instantiate()
     
@@ -35,6 +36,22 @@ final class LaunchDetailsViewController: UIViewController {
 extension LaunchDetailsViewController: LaunchDetailsViewInput {
     func setupHeaderView(headerViewModel: LaunchDetailsHeaderViewModel) {
         launchDetailsHeaderView.setup(with: headerViewModel)
+    }
+    
+    func reloadData() {
+        tableView.reloadData()
+    }
+    
+    func showLoadingIndecator() {
+        loadingIndicator.isHidden = false
+    }
+
+    func hideLoadingIndecator() {
+        loadingIndicator.isHidden = true
+    }
+    
+    func showTableView() {
+        tableView.isHidden = false
     }
 }
 

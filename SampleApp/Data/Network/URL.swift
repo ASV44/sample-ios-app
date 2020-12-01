@@ -15,4 +15,8 @@ struct Url {
     static var launchesPast: String {
         return BaseURL  + "/launches/past"
     }
+    
+    static var rockets: String {
+        return BaseURL + "/rockets"
+    }
 }

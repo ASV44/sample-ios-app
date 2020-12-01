@@ -1,10 +1,14 @@
 import Foundation
 
-protocol LaunchDetailsViewInput: class {
+protocol LaunchDetailsViewInput: ErrorPresentable {
     func setupHeaderView(headerViewModel: LaunchDetailsHeaderViewModel)
+    func reloadData()
+    func showLoadingIndecator()
+    func hideLoadingIndecator()
+    func showTableView()
 }
 
-protocol LaunchDetailsViewOutput {
+protocol LaunchDetailsViewOutput: ExceptionHandler {
     func viewDidLoad()
     var sectionCount: Int { get }
     func rowCount(for section: Int) -> Int
